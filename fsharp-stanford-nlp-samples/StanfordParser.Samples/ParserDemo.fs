@@ -9,6 +9,8 @@ open edu.stanford.nlp.ling
 open edu.stanford.nlp.trees
 open edu.stanford.nlp.parser.lexparser
 
+open IKVM.FSharp
+
 let demoDP (lp:LexicalizedParser) (fileName:string) =
     // This option shows loading and sentence-segment and tokenizing
     // a file using DocumentPreprocessor
@@ -17,7 +19,7 @@ let demoDP (lp:LexicalizedParser) (fileName:string) =
     // You could also create a tokenizer here (as below) and pass it
     // to DocumentPreprocessor
     DocumentPreprocessor(fileName).iterator()
-    |> JavaCollections.toSeq
+    |> Collections.toSeq
     |> Seq.iter (fun sentence -> 
         let parse = lp.apply(sentence);
         parse.pennPrint();

@@ -8,12 +8,14 @@ open edu.stanford.nlp.``process``
 open edu.stanford.nlp.trees
 open edu.stanford.nlp.parser.lexparser
 
+open IKVM.FSharp
+
 // Usage: ParserDemo2 [[grammar] textFile] 
 let main (model:string option) (fileName:string option) = 
     let grammar = 
         match model with
         | Some(model) -> model
-        | None -> "..\..\..\..\StanfordNLPLibraries\stanford-parser\stanford-parser-2.0.4-models\englishPCFG.ser.gz"
+        | None -> @"..\..\..\..\StanfordNLPLibraries\stanford-parser\stanford-parser-2.0.4-models\englishPCFG.ser.gz"
     let options =[|"-maxLength"; "80"; "-retainTmpSubcategories"|]
     let lp = LexicalizedParser.loadModel(grammar, options);
     let tlp = PennTreebankLanguagePack();
@@ -24,13 +26,13 @@ let main (model:string option) (fileName:string option) =
         | Some(file) -> 
             let dp = DocumentPreprocessor(file);
             dp.iterator()
-            |> JavaCollections.toSeq
+            |> Collections.toSeq
             |> Seq.cast<ArrayList>
         | None ->
             // Showing tokenization and parsing in code a couple of different ways.
             seq {
                 let sent = [| "This"; "is"; "an"; "easy"; "sentence"; "." |] 
-                yield sent |> Seq.map (fun w-> Word(w)) |> JavaCollections.toArrayList
+                yield sent |> Seq.map (fun w-> Word(w)) |> Collections.toArrayList
 
                 let sent2 ="This is a slightly longer and more complex sentence requiring tokenization."
                 let toke = tlp.getTokenizerFactory().getTokenizer(new StringReader(sent2));
