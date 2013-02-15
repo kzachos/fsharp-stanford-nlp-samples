@@ -14,6 +14,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StanfordPOSTagger.Samples",
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "IKVM.FSharp", "IKVM.FSharp\IKVM.FSharp.fsproj", "{7A3D61F6-DCA1-4636-8005-8F6DA24A8479}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StanfordNamedEntityRecognizer.Samples", "StanfordNamedEntityRecognizer.Samples\StanfordNamedEntityRecognizer.Samples.fsproj", "{C527EFC5-33CA-4317-B413-06AED2E9C65E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{7A3D61F6-DCA1-4636-8005-8F6DA24A8479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A3D61F6-DCA1-4636-8005-8F6DA24A8479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A3D61F6-DCA1-4636-8005-8F6DA24A8479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C527EFC5-33CA-4317-B413-06AED2E9C65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C527EFC5-33CA-4317-B413-06AED2E9C65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C527EFC5-33CA-4317-B413-06AED2E9C65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C527EFC5-33CA-4317-B413-06AED2E9C65E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
