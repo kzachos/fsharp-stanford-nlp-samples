@@ -20,6 +20,7 @@ let demoDP (lp:LexicalizedParser) (fileName:string) =
     // to DocumentPreprocessor
     DocumentPreprocessor(fileName).iterator()
     |> Collections.toSeq
+    |> Seq.cast<List>
     |> Seq.iter (fun sentence -> 
         let parse = lp.apply(sentence);
         parse.pennPrint();
@@ -53,7 +54,7 @@ let demoAPI (lp:LexicalizedParser) =
     tp.printTree(parse)
 
 let main fileName =
-    let lp = LexicalizedParser.loadModel(@"..\..\..\..\StanfordNLPLibraries\stanford-parser\stanford-parser-2.0.4-models\englishPCFG.ser.gz")
+    let lp = LexicalizedParser.loadModel(@"..\..\..\..\StanfordNLPLibraries\stanford-parser\models\englishPCFG.ser.gz")
     match fileName with
     | Some(file) -> demoDP lp file
     | None -> demoAPI lp

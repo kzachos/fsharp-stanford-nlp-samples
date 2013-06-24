@@ -16,7 +16,7 @@ open IKVM.FSharp
 //
 //  @author Christopher Manning
 
-let model = @"..\..\..\..\StanfordNLPLibraries\stanford-postagger\models\wsj-0-18-left3words.tagger"
+let model = @"..\..\..\..\StanfordNLPLibraries\stanford-postagger\models\wsj-0-18-bidirectional-nodistsim.tagger"
 
 let main (fileName:string) = 
     let tagger = MaxentTagger(model)

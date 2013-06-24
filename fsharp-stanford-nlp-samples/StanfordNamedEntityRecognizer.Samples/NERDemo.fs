@@ -20,7 +20,6 @@ let main file =
     // and how to run it on a whole file.  For the hard-coded String,
     // it shows how to run it on a single sentence, and how to do this
     // and produce an inline XML output format.
-    let x = edu.stanford.nlp.ling.CoreAnnotations.AnswerAnnotation().getClass()
     match file with
     | Some(fileName) ->
         let fileContents = File.ReadAllText(fileName)

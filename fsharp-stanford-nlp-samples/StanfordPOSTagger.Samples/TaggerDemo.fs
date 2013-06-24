@@ -8,7 +8,7 @@ open edu.stanford.nlp.tagger.maxent;
 
 open IKVM.FSharp
 
-let model = @"..\..\..\..\StanfordNLPLibraries\stanford-postagger\models\wsj-0-18-left3words.tagger"
+let model = @"..\..\..\..\StanfordNLPLibraries\stanford-postagger\models\wsj-0-18-bidirectional-nodistsim.tagger"
 
 let tagReader (reader:Reader) = 
     let tagger = MaxentTagger(model)

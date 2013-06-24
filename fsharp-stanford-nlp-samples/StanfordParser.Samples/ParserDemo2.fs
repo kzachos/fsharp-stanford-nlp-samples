@@ -15,7 +15,7 @@ let main (model:string option) (fileName:string option) =
     let grammar = 
         match model with
         | Some(model) -> model
-        | None -> @"..\..\..\..\StanfordNLPLibraries\stanford-parser\stanford-parser-2.0.4-models\englishPCFG.ser.gz"
+        | None -> @"..\..\..\..\StanfordNLPLibraries\stanford-parser\models\englishPCFG.ser.gz"
     let options =[|"-maxLength"; "80"; "-retainTmpSubcategories"|]
     let lp = LexicalizedParser.loadModel(grammar, options);
     let tlp = PennTreebankLanguagePack();
@@ -47,6 +47,3 @@ let main (model:string option) (fileName:string option) =
         let gs = gsf.newGrammaticalStructure(parse)
         let tdl = gs.typedDependenciesCCprocessed(true)
         printfn "%O\n" tdl
-
-    let sent3 = "This is one last test!"
-    lp.apply(sent3).pennPrint()
